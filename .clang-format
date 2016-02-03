@@ -1,0 +1,13 @@
+---
+BasedOnStyle: LLVM
+Language: Cpp
+AlignConsecutiveAssignments: true
+AllowShortBlocksOnASingleLine: true
+AllowShortCaseLabelsOnASingleLine: true
+AllowShortIfStatementsOnASingleLine: true
+AllowShortLoopsOnASingleLine: true
+ColumnLimit: 0
+IndentCaseLabels: true
+IndentWidth: 4
+ObjCBlockIndentWidth: 4
+ObjCSpaceAfterProperty: true

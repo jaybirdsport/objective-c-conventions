@@ -91,6 +91,14 @@ Use [HeaderDoc](https://developer.apple.com/library/mac/documentation/DeveloperT
 
 Use comments sparingly, predominantly for TODOs. Instead of commenting the intent of a block of code, use more explanatory local variable names and/ or break into appropriately named subroutines.
 
+## Automated Formatting
+
+In most cases, consistency is more important than any particular style choice. Consistency is best managed by tools. This means that styles that can be easily enforced by tools are strongly preferred. All code should be run through clang-format with the project's settings prior to committing. These settings may be found in `.clang-format` at the top of the project. Install clang-format using `brew install clang-format`. See also [ClangFormat-Xcode](https://github.com/travisjeffery/ClangFormat-Xcode) for direct Xcode integration.
+
+As much as possible, the clang-format settings should be compatible with Xcode's Re-Indent and with Xcode's default settings (i.e. 4 space indent).
+
+If an existing file does not conform to the current clang-format settings, it should be reformatted and committed prior to performing other modifications. This allows formatting changes to be reviewed separately from logic changes.
+
 ## Whitespace
 
 Indent using 4 spaces. Never indent with tabs. Be sure to set this preference in Xcode.
@@ -137,30 +145,6 @@ Method braces always open on the definition line and close on a new line.
 There should be exactly one blank line between methods to aid in visual clarity and organization. Whitespace within methods should separate functionality, but often there should probably be new methods.
 
 If required, `@synthesize` and `@dynamic` should each be declared on new lines in the implementation.
-
-Colon-aligning method invocation should often be avoided.  There are cases where a method signature may have >= 3 colons and colon-aligning makes the code more readable. Please do **NOT** however colon align methods containing blocks because Xcode's indenting makes it illegible.
-
-**Preferred:**
-```objc
-// blocks are easily readable
-[UIView animateWithDuration:1.0 animations:^{
-  // something
-} completion:^(BOOL finished) {
-  // something
-}];
-```
-
-**Not Preferred:**
-```objc
-// colon-aligning makes the block indentation hard to read
-[UIView animateWithDuration:1.0
-                 animations:^{
-                     // something
-                 }
-                 completion:^(BOOL finished) {
-                     // something
-                 }];
-```
 
 ## Data Types
 Prefer Foundation data types when interacting with Apple APIs and when creating custom APIs.
@@ -280,9 +264,7 @@ for (int i = 0; i < 10; i++) {
 
 ## Control Structures
 
-Don't use multiple return statements.
-
-Always surround `if` bodies with curly braces if there is an `else`. Single-line `if` bodies without an `else` should be on the same line as the `if`.
+Always surround `if` bodies with curly braces. Single-line `if` bodies may be on the same line as the `if`, but must still include curly braces.
 
 All curly braces should begin on the same line as their associated statement. They should end on a new line.
 
