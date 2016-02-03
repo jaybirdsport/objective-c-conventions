@@ -93,7 +93,7 @@ Use comments sparingly, predominantly for TODOs. Instead of commenting the inten
 
 ## Automated Formatting
 
-In most cases, consistency is more important than any particular style choice. Consistency is best managed by tools. This means that styles that can be easily enforced by tools are strongly preferred. All code should be run through clang-format with the project's settings prior to committing. These settings may be found in `.clang-format` at the top of the project. Install clang-format using `brew install clang-format`.
+In most cases, consistency is more important than any particular style choice. Consistency is best managed by tools. This means that styles that can be easily enforced by tools are strongly preferred. All code should be run through clang-format with the project's settings prior to committing. These settings may be found in `.clang-format` at the top of the project. Install clang-format using `brew install clang-format`. See also [ClangFormat-Xcode](https://github.com/travisjeffery/ClangFormat-Xcode) for direct Xcode integration.
 
 As much as possible, the clang-format settings should be compatible with Xcode's Re-Indent and with Xcode's default settings (i.e. 4 space indent).
 
